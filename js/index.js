@@ -40,3 +40,83 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+// Nav
+
+let navBar = document.querySelector('nav');
+
+let navItems = document.querySelectorAll('nav a');
+
+navItems.forEach(function(element, index) {
+  element.textContent = siteContent['nav']['nav-item-' + (index + 1)];
+  element.style.color = 'green';
+})
+
+let blogLink = document.createElement("a");
+blogLink.textContent = 'Blog';
+blogLink.style.color = 'green';
+
+let galleryLink = document.createElement("a");
+galleryLink.textContent = 'Gallery';
+galleryLink.style.color = 'green';
+
+navBar.appendChild(blogLink);
+navBar.appendChild(galleryLink);
+
+// CTA
+
+let ctaH1 = document.querySelector('h1');
+ctaH1.textContent = siteContent['cta']['h1'];
+
+let ctaButton = document.querySelector('button');
+ctaButton.textContent = siteContent['cta']['button'];
+
+let ctaImg = document.querySelector('#cta-img');
+ctaImg.src = siteContent['cta']['img-src'];
+
+// Main
+
+let middleContentH4 = document.querySelectorAll('.text-content h4');
+let middleContentText = document.querySelectorAll('.text-content p');
+
+let h4Array = [];
+let midContentArr = [];
+for (let key in siteContent['main-content']) {
+  if (key.includes('h4')) {
+    h4Array.push(siteContent['main-content'][key])
+  } else if (!key.includes('img') && !key.includes('h4')){
+    midContentArr.push(siteContent['main-content'][key])
+  }
+}
+
+middleContentH4.forEach(function(element, index) {
+  element.textContent = h4Array[index];
+})
+
+middleContentText.forEach(function(element, index) {
+  element.textContent = midContentArr[index];
+})
+
+let middleImage = document.querySelector('#middle-img');
+middleImage.src = siteContent["main-content"]["middle-img-src"];
+
+// Contact
+
+siteContent.contact.address = "123 Way 456 Street<br>Somewhere, USA";
+
+let contactArray = Object.values(siteContent['contact']);
+
+let contactH4 = document.querySelector('.contact h4');
+contactH4.textContent = siteContent['contact']['contact-h4'];
+
+let contactInfo = document.querySelectorAll('.contact p');
+
+contactInfo.forEach(function(element, index) {
+  element.innerHTML = contactArray[index + 1];
+})
+
+// Footer
+
+let copyright = document.querySelector('footer p');
+copyright.textContent = siteContent['footer']['copyright'];
+

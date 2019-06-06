@@ -46,6 +46,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 let navBar = document.querySelectorAll('nav a');
 navBar.forEach(function(element, index) {
   element.textContent = siteContent['nav']['nav-item-' + (index + 1)];
+  element.style.color = 'green';
 })
 
 // CTA
@@ -97,13 +98,7 @@ contactInfo.forEach(function(element, index) {
   element.textContent = contactArray[index + 1];
 })
 
-let firstParagraph = document.querySelector('.contact p');
-
 let lineBreak = document.createElement("br"); 
-
-let contactSection = document.querySelector(".contact").parentNode;
-
-contactSection.insertBefore(lineBreak, firstParagraph.nextSibling);
 
 // Footer
 

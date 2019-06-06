@@ -43,11 +43,24 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 // Nav
 
-let navBar = document.querySelectorAll('nav a');
-navBar.forEach(function(element, index) {
+let navBar = document.querySelector('nav');
+
+let navItems = document.querySelectorAll('nav a');
+
+navItems.forEach(function(element, index) {
   element.textContent = siteContent['nav']['nav-item-' + (index + 1)];
   element.style.color = 'green';
 })
+
+let blogLink = document.createElement("a");
+blogLink.textContent = 'Blog';
+blogLink.style.color = 'green';
+
+let galleryLink = document.createElement("a");
+galleryLink.textContent = 'Gallery';
+galleryLink.style.color = 'green';
+
+navBar.appendChild(blogLink, galleryLink);
 
 // CTA
 

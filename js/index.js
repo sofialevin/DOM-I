@@ -60,7 +60,8 @@ let galleryLink = document.createElement("a");
 galleryLink.textContent = 'Gallery';
 galleryLink.style.color = 'green';
 
-navBar.appendChild(blogLink, galleryLink);
+navBar.appendChild(blogLink);
+navBar.appendChild(galleryLink);
 
 // CTA
 

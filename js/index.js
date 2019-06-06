@@ -101,22 +101,21 @@ middleImage.src = siteContent["main-content"]["middle-img-src"];
 
 // Contact
 
+siteContent.contact.address = "123 Way 456 Street<br>Somewhere, USA";
+
 let contactArray = Object.values(siteContent['contact']);
 
 let contactH4 = document.querySelector('.contact h4');
 contactH4.textContent = siteContent['contact']['contact-h4'];
 
 let contactInfo = document.querySelectorAll('.contact p');
-contactInfo.forEach(function(element, index) {
-  element.textContent = contactArray[index + 1];
-})
 
-let lineBreak = document.createElement("br"); 
+contactInfo.forEach(function(element, index) {
+  element.innerHTML = contactArray[index + 1];
+})
 
 // Footer
 
 let copyright = document.querySelector('footer p');
 copyright.textContent = siteContent['footer']['copyright'];
-
-
 
